@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://buwfr08b03b2h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p30eq"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="Curve" id="Curve_r52ga"]
+_data = [Vector2(0.282178, 0.142857), 0.0, 0.0, 0, 0, Vector2(0.673267, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_jl5nf"]
+_data = [Vector2(0.475248, 0.153846), 0.0, 0.0, 0, 0, Vector2(0.905941, 0.989011), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_oshkf"]
+_data = [Vector2(0.049505, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_cimkt"]
+curve_x = SubResource("Curve_r52ga")
+curve_y = SubResource("Curve_jl5nf")
+curve_z = SubResource("Curve_oshkf")
+
+[sub_resource type="Curve" id="Curve_ykr5p"]
+min_value = -2.0
+max_value = 2.0
+_data = [Vector2(0.0445545, -1.78022), 0.0, 0.0, 0, 0, Vector2(0.5, 2), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_shta5"]
+curve = SubResource("Curve_ykr5p")
+
+[sub_resource type="Curve" id="Curve_w0s8d"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.608911, 0.384615), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_daq8v"]
+curve = SubResource("Curve_w0s8d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_315sp"]
+angle_max = 90.0
+directional_velocity_min = 0.0
+directional_velocity_max = 5.0
+directional_velocity_curve = SubResource("CurveXYZTexture_cimkt")
+orbit_velocity_curve = SubResource("CurveTexture_shta5")
+scale_curve = SubResource("CurveTexture_daq8v")
+anim_speed_max = 5.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_1s2u2"]
+
+[node name="Particles3D" type="GPUParticles3D"]
+material_override = SubResource("StandardMaterial3D_p30eq")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_315sp")
+draw_pass_1 = SubResource("SphereMesh_1s2u2")

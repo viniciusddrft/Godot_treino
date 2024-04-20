@@ -1,0 +1,132 @@
+[gd_scene load_steps=14 format=3 uid="uid://bubqq3ap6qm"]
+
+[ext_resource type="Texture2D" uid="uid://baftkhrd264dg" path="res://textures/porta_metal_diffuse.png" id="1_rv73c"]
+[ext_resource type="Texture2D" uid="uid://kvo6jpf2i6ax" path="res://textures/porta_metal_roughness.png" id="2_m17s1"]
+[ext_resource type="Texture2D" uid="uid://bfvwh8msolisp" path="res://textures/porta_metal_normal.png" id="3_kqbnp"]
+[ext_resource type="Script" path="res://scenes/porta_fechada.gd" id="4_pwupp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoke0"]
+resource_name = "porta_aberta"
+cull_mode = 2
+albedo_texture = ExtResource("1_rv73c")
+metallic = 1.0
+metallic_texture = ExtResource("2_m17s1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_m17s1")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_kqbnp")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ad20f"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 6.34733, 7.52635, 2.00001),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 2, 0, 7, 0, 3, 0, 2, 0, 6, 0, 7, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 4, 0, 1, 0, 5, 0, 4, 0, 0, 0, 1, 0, 2, 0, 4, 0, 6, 0, 2, 0, 0, 0, 4, 0, 7, 0, 1, 0, 3, 0, 7, 0, 5, 0, 1, 0),
+"name": "porta_aberta",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 255, 255, 254, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k1nn0"]
+resource_name = "assets_cenarios_v2_Cubo_002"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 6.34733, 7.52635, 2.00001),
+"attribute_data": PackedByteArray(161, 89, 255, 255, 219, 179, 15, 144, 98, 180, 255, 255, 161, 89, 255, 127, 219, 179, 15, 144, 98, 180, 255, 127, 161, 89, 255, 255, 107, 188, 15, 144, 218, 187, 255, 255, 161, 89, 255, 127, 107, 188, 15, 144, 218, 187, 255, 127, 255, 255, 255, 255, 219, 179, 239, 239, 98, 180, 255, 255, 255, 255, 255, 127, 219, 179, 239, 239, 98, 180, 255, 127, 255, 255, 255, 255, 107, 188, 239, 239, 218, 187, 255, 255, 255, 255, 255, 127, 107, 188, 239, 239, 218, 187, 255, 127),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(2, 0, 11, 0, 5, 0, 2, 0, 8, 0, 11, 0, 6, 0, 21, 0, 9, 0, 6, 0, 18, 0, 21, 0, 20, 0, 17, 0, 23, 0, 20, 0, 14, 0, 17, 0, 12, 0, 3, 0, 15, 0, 12, 0, 0, 0, 3, 0, 7, 0, 13, 0, 19, 0, 7, 0, 1, 0, 13, 0, 22, 0, 4, 0, 10, 0, 22, 0, 16, 0, 4, 0),
+"material": SubResource("StandardMaterial3D_aoke0"),
+"name": "porta_aberta",
+"primitive": 3,
+"uv_scale": Vector4(2.85615, 2, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 127, 0, 0, 0, 0, 254, 255, 84, 213, 0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 255, 127, 0, 0, 255, 255, 254, 255, 84, 213, 0, 0, 255, 255, 254, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 84, 213, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 254, 255, 255, 127, 255, 255, 0, 0, 254, 255, 84, 213, 255, 255, 0, 0, 254, 255, 255, 191, 255, 255, 255, 255, 254, 255, 255, 127, 255, 255, 255, 255, 254, 255, 84, 213, 255, 255, 255, 255, 254, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 255, 191, 255, 127, 255, 255, 84, 85, 84, 85, 255, 63, 255, 127, 255, 127, 255, 255, 84, 213, 170, 42, 255, 63, 255, 127, 255, 255, 255, 127, 84, 85, 84, 85, 255, 63, 255, 127, 255, 255, 255, 127, 84, 213, 170, 42, 255, 63, 255, 127, 255, 127, 255, 255, 84, 85, 84, 85, 255, 127, 0, 0, 255, 127, 255, 255, 84, 213, 170, 42, 255, 127, 0, 0, 255, 255, 255, 127, 84, 85, 84, 85, 255, 127, 0, 0, 255, 255, 255, 127, 84, 213, 170, 42, 255, 127, 0, 0)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ad20f")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j6by3"]
+points = PackedVector3Array(-1, -1, -1, -1, -1, 1, -1, 6.52635, -1, 5.34733, -1, -1, 5.34733, -1, 1, -1, 6.52635, 1, 5.34733, 6.52635, -1, 5.34733, 6.52635, 1)
+
+[sub_resource type="Animation" id="Animation_cjnqb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yd4ln"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(10, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j2pox"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(10, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ub3q4"]
+_data = {
+"RESET": SubResource("Animation_cjnqb"),
+"close": SubResource("Animation_yd4ln"),
+"open": SubResource("Animation_j2pox")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fjtmk"]
+radius = 12.8475
+
+[node name="porta_fechada" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("ArrayMesh_k1nn0")
+skeleton = NodePath("")
+script = ExtResource("4_pwupp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_j6by3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ub3q4")
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_fjtmk")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

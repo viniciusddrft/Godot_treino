@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj05wan70ulpb"]
+
+[ext_resource type="Texture2D" uid="uid://y06pnxib28cn" path="res://assets_texturas/orange/texture_08.png" id="1_jn3x2"]
+[ext_resource type="Texture2D" uid="uid://biefgdqvqslb3" path="res://assets_texturas/orange/normal_map_texture_08.png" id="2_sp5to"]
+[ext_resource type="Texture2D" uid="uid://c5p77xuxbdpqj" path="res://assets_texturas/orange/roughness_texture_08.png" id="3_pvp3h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hratw"]
+albedo_texture = ExtResource("1_jn3x2")
+roughness_texture = ExtResource("3_pvp3h")
+normal_enabled = true
+normal_texture = ExtResource("2_sp5to")
+
+[sub_resource type="BoxMesh" id="BoxMesh_evekk"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mggch"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Bloco" type="Node3D"]
+
+[node name="Bloco" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_hratw")
+mesh = SubResource("BoxMesh_evekk")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bloco"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bloco/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_mggch")
